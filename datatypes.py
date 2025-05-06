@@ -19,5 +19,19 @@ first_name="John"
 full_name=f"{first_name} Doe"
 print(full_name)
 
+#integers and floats
+"""
+-integers are whole numbers
+-floats are decimal numbers
+-converting an integer to a float is done by using the float() function
+-converting a float to an integer is done by using the int() function
+"""
+print(type(1)) #int
+print(type(1.0)) #float
+total=0.7+2.5
+print(total) #3.2
+print(type(total)) #float
+print(type(7/3))# float
+print(type(6/3))# float
 
-
+print(round(2.5+1.4)) #4-rounded off from 3.9 to 4
