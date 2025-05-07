@@ -136,3 +136,41 @@ cart=["milk","bread","eggs"] #example of list
 day=None #example of none, used to indicate that a variable has no value
 day="Monday" #assigned value after value is known
 
+"""lists -> ordered collection of items similar to arrays in js
+we still use square brackets
+how to get length off lists we use len()
+"""
+players=[24,67,45]
+players[1]=90 #updating
+print(players)
+#players[5]=100 #will result to an error because it exceeds the list length
+#use this instead .insert
+players.insert(5,100)
+players.insert(3,50)
+print(players)
+#pop method without an arguemwnt removes the last value
+#with arguement,removes value at specified index
+players.pop(2)
+print(players)
+
+#map method
+def multiply_by_two(x):
+    return x * 2
+
+map_iterator=map(multiply_by_two, players)
+print("multipied players", list(map_iterator))
+
+"""
+Tuples -> are similar to lists but are immutable(cannot be changed) and we use paranthesis ()
+scores=(1,2,3,4,5) #example of tuple
+it shares the same properties as lists,the only difference is the use of () in tuples
+"""
+emails=("john@gmail.com","jane@gmail.com")
+print(emails[1])
+#if you want to force update/change of data in tuple you have to convert it to a list
+#then back to a tuple to store the data permanently
+temp_emails=list(emails)
+temp_emails[1]='arif@gmail.com'
+modified_emails=tuple(temp_emails)
+print(modified_emails)
+#above is the way to convert
