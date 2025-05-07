@@ -48,7 +48,10 @@ print(bool(0))#False-> 0 is False
 print(bool(1))#True-> 1 is True
 print(bool("False"))#True-> non-empty string is True
 
-#dictionaries->they are basically objects
+"""Dictionaries->they are basically objects
+#dicts are collection of data stored in key-value(can be of any data type) pairs
+#we still use the curly braces{}
+"""
 
 person={
     "name":"John",
@@ -68,6 +71,53 @@ person={
 print(person["address"]["county"])#Mombasa
 print(person.get("address").get("county"))#Mombasa
 
+student={
+    "name":"Daud",
+    "age":20,
+    "major":"Software Engineering",
+    "scores":[34,89,76 ,{"model":"Python"}],
+    "location":"Mombasa"
+}
+#Accesing items in a dictionary -> we can use square brackets or the get() method
+print(student["name"])#Daud
+print(student.get("name"))#Daud
+print(student["scores"])#[34,89,76]
+print(student["scores"][3].get("model"))
+
+#Adding or updating items in a dictionary -> as long the key exists we can update the value else its going to add.
+#Modifying age
+student["age"]=25
+student["class"]= "Web 9"
+print(student)
+student["class"]={
+    "name":"Web 9",
+    "location":"Remote"
+}
+
+print(student["class"]["location"])#Remote
+print(student["scores"][2])#76
+
+#delete items -> we use the del keyword or the .pop() method
+del student["location"]
+print(student)
+delete_value=student.pop("class")
+print(student)
+print(delete_value)# {'name': 'Web 9', 'location': 'Remote'}
+#the pop method returns the value of the deleted key
+
+"""
+sets -> unique elements -> we can create a set using the set() function or by using curly braces {}
+"""
+random_values={2,3,4,3,2,4,5}
+print(random_values)#{2,3,4,5} -> duplicates are removed
+
+#empty curly braces still fall under dictionary
+# so to create an empty set we use the set() function
+empty_set={}
+correct_empty_set=set()#this is a set -> this is how we create an empty set
+print(type(correct_empty_set))#<class 'set'> -> this is a set
+print(type(empty_set))#<class 'dict'> -> this is a dictionary not a set
+
 #lists,tuples
 #tuples are immutable 
 #lists are mutable
@@ -78,3 +128,4 @@ cart=["milk","bread","eggs"] #example of list
 #none -> combines null and undefined
 day=None #example of none, used to indicate that a variable has no value
 day="Monday" #assigned value after value is known
+
