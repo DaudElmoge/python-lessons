@@ -115,8 +115,15 @@ print(random_values)#{2,3,4,5} -> duplicates are removed
 # so to create an empty set we use the set() function
 empty_set={}
 correct_empty_set=set()#this is a set -> this is how we create an empty set
+#sets avoid duplicates
 print(type(correct_empty_set))#<class 'set'> -> this is a set
 print(type(empty_set))#<class 'dict'> -> this is a dictionary not a set
+numbers=[2,2,4,5,2]
+unique_numbers=set(numbers)
+print(unique_numbers)#{2,4,5} -> duplicates are removed
+names=["John","Doe","John"]
+unique_names=set(names)
+print(unique_names)#{'Doe', 'John'} -> duplicates are removed
 
 #lists,tuples
 #tuples are immutable 
