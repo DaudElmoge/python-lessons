@@ -1,5 +1,5 @@
 function camelCase(str) {
-    return str.replace(/\W+(.)/g, function (match,chr) {
+    return str.replace(/\W+(.)/g, function (_,chr) {
         return chr.toUpperCase()
     });
 }
