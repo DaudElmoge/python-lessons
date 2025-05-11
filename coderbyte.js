@@ -25,3 +25,42 @@ function camelCase(str) {
   
   // Test the function
   console.log(camelCase("Bob loves coding")); // Output: "bobLovesCoding"
+
+//string checker
+
+  function CodeLandUsernameValidator(str) {
+    if (str.length < 4 || str.length > 25) {
+        return "false";
+    }
+    if (!/^[a-zA-Z]/.test(str)) {
+        return "false";
+    }
+    if (!/^[a-zA-Z0-9_]+$/.test(str)) {
+        return "false";
+    }
+    if (str.endsWith('_')) {
+        return "false";
+    }
+    return "true";
+    
+}
+console.log(CodeLandUsernameValidator("Daud_Ahmed1"))
+console.log(CodeLandUsernameValidator("DaudAhmed1!"))
+
+
+function CodeLandUsernameValidator(str) {
+    if (str.length < 4 || str.length > 25) {
+        return "false";
+    } else if (!/^[a-zA-Z]/.test(str)) {
+        return "false";
+    } else if (!/^[a-zA-Z0-9_]+$/.test(str)) {
+        return "false";
+    } else if (str.endsWith('_')) {
+        return "false";
+    } else {
+        return "true";
+    }
+}
+
+console.log(CodeLandUsernameValidator("Daud_Ahmed1!"))
+console.log(CodeLandUsernameValidator("daudahmed"))
