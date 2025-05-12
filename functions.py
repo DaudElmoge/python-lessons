@@ -25,3 +25,4 @@ def sum(*args):
     print(args)
 sum(1,2)    #(1,2)
 
+#Decorators
