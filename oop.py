@@ -87,7 +87,7 @@ class Car:
         self.engine=engine
         self.transmission=transmission
 
-    def expensive(self):
+    def price(self):
         print(f"The {self.brand} {self.model} is one of the few cars inspired by Formula 1 engineering.")    
 
     def features(self):
@@ -96,11 +96,42 @@ class Car:
 car1= Car("Mercedes","AMG ONE","hybrid 1.6L V6 engine","7-speed automated manual")
 print(car1.brand)
 print(car1.model)
-car1.expensive()
+car1.price()
 car1.features()
 
 car2=Car("Aston Martin","Valkyrie","hybrid 6.5L V12 engine","7-speed automated manual")
-car2.expensive()
+car2.price()
 car2.features()
 
+#using property()
+"""
+Properties in Python are attributes that are controlled by methods.
+Python provides us a few built-in functions to manipulate attributes:
+-getattr() retrieves the value of an attribute.
+-setattr() changes the value of an attribute, just as you would with dot notation.
+-hasattr() checks for the presence of an attribute.
+-delattr() removes an attribute from a class or object.
+"""
+class Human:
+    species="Homo sapiens"
+    def __init__(self,age):
+        self.age=age
 
+    def get_age(self):  
+        print("Retrieving age.")
+        return self._age
+    
+    def set_age(self,age):
+     if (type(age) in (int,float)) and (0 <= age <=120):
+        print(f"Setting age to {age}")
+        self._age=age
+     else:
+        print("Age must be a number between 0 and 120")
+        
+    age=property(get_age,set_age)
+"""
+get_age() is compiled by the property function and prints "Retrieving age" when we access age through dot notation or an attr() function.
+set_age() is compiled by the property() function and prints "Setting age to { age }" when we change our human's age.
+The property() function compiles our getter and setter and calls them whenever anyone accesses our human's age.
+Notice the single underscore we place before the age attribute. This tells other Python programmers that this is meant to be treated as a private member of the class
+"""
