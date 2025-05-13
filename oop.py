@@ -79,3 +79,28 @@ student3={
 }
 
 #assignment(Tue-13/5/25)-> create a class with 3-4 attributes and 2 methods (behaviors)
+
+class Car:
+    def __init__(self,brand,model,engine,transmission):
+        self.brand=brand
+        self.model=model
+        self.engine=engine
+        self.transmission=transmission
+
+    def expensive(self):
+        print(f"The {self.brand} {self.model} is one of the few cars inspired by Formula 1 engineering.")    
+
+    def features(self):
+        print(f"It features a {self.engine} mated to a {self.transmission} gearbox.") 
+
+car1= Car("Mercedes","AMG ONE","hybrid 1.6L V6 engine","7-speed automated manual")
+print(car1.brand)
+print(car1.model)
+car1.expensive()
+car1.features()
+
+car2=Car("Aston Martin","Valkyrie","hybrid 6.5L V12 engine","7-speed automated manual")
+car2.expensive()
+car2.features()
+
+
