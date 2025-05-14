@@ -25,4 +25,42 @@ def sum(*args):
     print(args)
 sum(1,2)    #(1,2)
 
-#Decorators
+#Decorators -> reusability
+"""
+-> Design patterns that allows us to modify the functionality of a function without necessarily 
+modifying the function code itself
+-> It uses the special @ symbol on functions
+"""
+#how to create decorators
+def logger(func):
+    #define another inner function
+    def inner():
+        print("Decorator is running before function")
+        #execute the original function
+        func()
+    return inner
+
+@logger
+def check_mic():
+    print("Is the mic working?")
+
+check_mic()    
+
+decorated_func = logger(check_mic)
+#call/execute the inner function
+decorated_func()
+
+def modifier(func):
+    def inner(a,b):
+        #modify argument a
+        a=a+5
+        print(a)
+        #call the original function
+        return func(a,b)
+
+    return inner
+@modifier
+def calculate(a,b):
+    return a + b
+
+print (calculate(3,3))
