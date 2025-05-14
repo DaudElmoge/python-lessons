@@ -67,5 +67,5 @@ function CodeLandUsernameValidator(str) {
   }
 }
 
-console.log(CodeLandUsernameValidator("Daud_Ahmed1!"));
-console.log(CodeLandUsernameValidator("daudahmed"));
+console.log(CodeLandUsernameValidator("Chicken_Inn254!"));
+console.log(CodeLandUsernameValidator("chickeninn"));
