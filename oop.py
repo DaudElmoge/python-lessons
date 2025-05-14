@@ -129,6 +129,13 @@ class Human:
         print("Age must be a number between 0 and 120")
         
     age=property(get_age,set_age)
+
+
+#class methods
+#@classmethod
+#def species(cls):
+    #print(f"species is {cls.species}")
+
 """
 get_age() is compiled by the property function and prints "Retrieving age" when we access age through dot notation or an attr() function.
 set_age() is compiled by the property() function and prints "Setting age to { age }" when we change our human's age.
