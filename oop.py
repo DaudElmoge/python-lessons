@@ -93,6 +93,11 @@ class Car:
     def features(self):
         print(f"It features a {self.engine} mated to a {self.transmission} gearbox.") 
 
+    #getter method
+    #@property
+    #def brand(self):
+     #   return self._brand.upper()
+
 car1= Car("Mercedes","AMG ONE","hybrid 1.6L V6 engine","7-speed automated manual")
 print(car1.brand)
 print(car1.model)
@@ -102,6 +107,10 @@ car1.features()
 car2=Car("Aston Martin","Valkyrie","hybrid 6.5L V12 engine","7-speed automated manual")
 car2.price()
 car2.features()
+
+
+
+
 
 #using property()
 """
@@ -142,3 +151,65 @@ set_age() is compiled by the property() function and prints "Setting age to { ag
 The property() function compiles our getter and setter and calls them whenever anyone accesses our human's age.
 Notice the single underscore we place before the age attribute. This tells other Python programmers that this is meant to be treated as a private member of the class
 """
+
+class Bus:
+    def __init__(self,name,year):
+        self._name=name
+        self.year=year
+
+    #getter method
+    @property
+    def name(self):
+        print("internal",self._name)
+        return self._name.upper()
+    @property
+    def year(self):
+        return self._year
+    #setter method
+    @name.setter
+    def name(self,value):
+        #check value is equal to man
+        if value =="man":
+            self._name=value
+        else:
+            #the raise keyword behaves like the return keyword
+            # where they both stop esxecution
+            raise ValueError("Bus name must be man")
+    @year.setter
+    def year(self,value):
+        if not isinstance(value,int):
+            raise ValueError("Year must be an integer") 
+        self._year=value   
+
+bus1=Bus("man",2020)
+print(bus1.name)    
+bus1.year=2018
+print(bus1.year)     
+
+#scenario(example where oop can be used)
+class Voter:
+    def __init__(self,name,age):
+        self._name=name
+        self._age=age
+
+    #getter method
+    @property
+    def age(self):
+        return self._age
+
+    #setter method
+    @age.setter
+    def age(self,value):
+        if not isinstance(value,int):
+            raise ValueError("Age must be an integer")
+        if value >= 18:
+            self._age=value
+        else:
+            raise ValueError("Age must be over or 18") 
+
+    """
+    ASSINGMENT:
+    create a validation method for age that checks for datatype
+    and also if its above or equal to 18       
+    """
+voter1=Voter("Jane",12)        
