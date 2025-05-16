@@ -1,4 +1,7 @@
 class Phone:
+
+    phones=[]
+
     tax_rate=0.10
     discount=0.05
     def __init__(self,name,serial_number,color,price,model):
@@ -7,6 +10,7 @@ class Phone:
         self.color=color
         self.price=price
         self.model=model
+        Phone.phones.append(self)  # Add instance to the class-level list
 
 
     def call(self):
@@ -69,4 +73,6 @@ class Iphone(Phone):
 phone1=Iphone()
 print("<iPhone>",phone1.call())        
 
+# Show all created phones
+print("All phones:", Phone.phones)
         
